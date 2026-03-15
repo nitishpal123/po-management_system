@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Order Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="brand">
+                <div class="logo"></div>
+                <h2>PO Nexus</h2>
+            </div>
+            <nav>
+                <a href="#" class="nav-item active">Create PO</a>
+                <a href="#" class="nav-item">Dashboard</a>
+                <a href="#" class="nav-item">Vendors</a>
+                <a href="#" class="nav-item">Products</a>
+            </nav>
+            <div class="settings-nav">
+                <a href="#" class="nav-item">Settings</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <div>
+                    <h1>Create Purchase Order</h1>
+                    <p>Draft a new purchase order and submit to your backend.</p>
+                </div>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=8b5cf6&color=fff" alt="User">
+                </div>
+            </header>
+
+            <div class="form-card glass-panel">
+                <form id="poForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="refNo">Reference Number</label>
+                            <input type="text" id="refNo" placeholder="e.g. PO-2023-001" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vendor">Vendor</label>
+                            <select id="vendor" required>
+                                <option value="" disabled selected>Select a vendor</option>
+                                <!-- Populated dynamically -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="productTable">
+                            <thead>
+                                <tr>
+                                    <th width="35%">Product</th>
+                                    <th width="20%">Price (₹)</th>
+                                    <th width="15%">Quantity</th>
+                                    <th width="20%">Total (₹)</th>
+                                    <th width="10%">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Rows added dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="actions-row">
+                        <button type="button" class="btn btn-secondary" id="addRowBtn">
+                            + Add Product
+                        </button>
+                        <div class="total-section">
+                            <h3>Grand Total: <span class="accent">₹<span id="grandTotal">0.00</span></span></h3>
+                        </div>
+                    </div>
+
+                    <div class="submit-row">
+                        <button type="submit" class="btn btn-primary">Generate Purchase Order</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
