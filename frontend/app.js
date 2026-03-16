@@ -32,6 +32,36 @@ function populateVendors() {
 }
 
 function setupEventListeners() {
+    // Navigation handling
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.page-section');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const targetId = e.currentTarget.getAttribute('data-target');
+            if (!targetId) {
+                // For settings or others without a section yet
+                alert("This feature will be available in the next update!");
+                return;
+            }
+            
+            // Update active nav
+            navItems.forEach(nav => nav.classList.remove('active'));
+            e.currentTarget.classList.add('active');
+            
+            // Show target section, hide others
+            sections.forEach(section => {
+                if (section.id === targetId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    });
+
     document.getElementById("addRowBtn").addEventListener("click", addRow);
     
     // Event delegation for table inputs

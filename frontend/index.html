@@ -16,10 +16,10 @@
                 <h2>PO Nexus</h2>
             </div>
             <nav>
-                <a href="#" class="nav-item active">Create PO</a>
-                <a href="#" class="nav-item">Dashboard</a>
-                <a href="#" class="nav-item">Vendors</a>
-                <a href="#" class="nav-item">Products</a>
+                <a href="#" class="nav-item active" data-target="create-po-section">Create PO</a>
+                <a href="#" class="nav-item" data-target="dashboard-section">Dashboard</a>
+                <a href="#" class="nav-item" data-target="vendors-section">Vendors</a>
+                <a href="#" class="nav-item" data-target="products-section">Products</a>
             </nav>
             <div class="settings-nav">
                 <a href="#" class="nav-item">Settings</a>
@@ -28,7 +28,9 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="page-header">
+            <!-- Create PO Section -->
+            <section id="create-po-section" class="page-section">
+                <header class="page-header">
                 <div>
                     <h1>Create Purchase Order</h1>
                     <p>Draft a new purchase order and submit to your backend.</p>
@@ -85,6 +87,58 @@
                     </div>
                 </form>
             </div>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="page-section" style="display: none;">
+                <header class="page-header">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Overview of your purchase orders.</p>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=8b5cf6&color=fff" alt="User">
+                    </div>
+                </header>
+                <div class="glass-panel" style="padding: 4rem; text-align: center; margin-top: 2rem; animation: fadeIn 0.5s ease-out;">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Coming Soon</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem;">The dashboard analytics will be available in the next update.</p>
+                </div>
+            </section>
+
+            <!-- Vendors Section -->
+            <section id="vendors-section" class="page-section" style="display: none;">
+                <header class="page-header">
+                    <div>
+                        <h1>Vendors</h1>
+                        <p>Manage your supplier relationships.</p>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=8b5cf6&color=fff" alt="User">
+                    </div>
+                </header>
+                <div class="glass-panel" style="padding: 4rem; text-align: center; margin-top: 2rem; animation: fadeIn 0.5s ease-out;">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Vendor Management</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem;">Vendor portal coming soon.</p>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products-section" class="page-section" style="display: none;">
+                <header class="page-header">
+                    <div>
+                        <h1>Products</h1>
+                        <p>Manage your product catalog.</p>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=8b5cf6&color=fff" alt="User">
+                    </div>
+                </header>
+                <div class="glass-panel" style="padding: 4rem; text-align: center; margin-top: 2rem; animation: fadeIn 0.5s ease-out;">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Product Catalog</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem;">Product management features coming soon.</p>
+                </div>
+            </section>
         </main>
     </div>
     <script src="app.js"></script>
